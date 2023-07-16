@@ -1,48 +1,54 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-        <x-validation-errors class="mb-4" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
+    <title>{{ config('app.name', 'E-Shop') }}</title>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            </div>
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
 
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
+<body>
+    <div class="font-sans text-gray-900 antialiased w-full h-screen bg-cover px-2 md:px-8 xl:px-96 overflow-auto flex items-center" style="background-image: url('/images/bg.svg');">
+        <div class="bg-slate-100 p-14 rounded-3xl bg-opacity-40 backdrop-blur-lg w-full">
+            <x-validation-errors />
+            <h1 class="text-3xl font-extrabold mb-4">Login</h1>
+            <form method="POST" action="/login">
+                @csrf
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+                <div class="mt-4">
+                    <label for="email" class="font-bold">Email</label>
+                    <input id="email" placeholder="Email" class="px-0 w-full border-0 border-b-2 border-b-slate-500 bg-transparent focus:ring-0 focus:border-purple-400" type="text" name="email" value="{{ old('email') }}" required autofocus autocomplete="email" />
+                </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+                <div class="mt-4">
+                    <label for="password" class="font-bold">Password</label>
+                    <input id="password" type="password" placeholder="Password" class="px-0 w-full border-0 border-b-2 border-b-slate-500 bg-transparent focus:ring-0 focus:border-purple-400" type="text" name="password" value="{{ old('password') }}" required autofocus autocomplete="password" />
+                </div>
 
-                <x-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout>
+                <div class="flex items-center justify-center flex-col mt-6">
+                    <button type="submit" class="mb-4 w-full md:w-1/2 py-3 rounded-full text-white bg-gradient-to-b from-pink-400 to-purple-400 hover:from-pink-300 hover:to-purple-300 text-lg md:text-xl xl:text-2xl font-semibold">
+                        Login
+                    </button>
+                    <p class="text-sm">
+                        You don't have account?
+                        <a class="underline text-gray-600 hover:text-purple-500 rounded-md " href="/register">
+                            Register here
+                        </a>
+                    </p>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

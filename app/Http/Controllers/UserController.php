@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     // Register
-    public function register(Request $request) {
+    public function register(Request $request)
+    {
         $request->validate([
             'first_name' => 'required|string',
             'last_name' => 'required|string',
@@ -32,6 +33,4 @@ class UserController extends Controller
 
         return redirect('/');
     }
-
-    // Login
 }
