@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [TransactionController::class, 'transactionHistory']);
 
 Route::get('/register', function () {
     return view('auth/register');
@@ -31,4 +30,5 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/', [TransactionController::class, 'transactionHistory']);
 });

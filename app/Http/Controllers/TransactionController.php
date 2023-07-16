@@ -13,7 +13,7 @@ class TransactionController extends Controller
         
         $transactions = Transaction::where('user_id',$id)->get();
 
-        return view('history',[$transactions]);
+        return view('history',['transactions'=>$transactions]);
     }
 
     function addTransaction(Request $request){
@@ -33,5 +33,7 @@ class TransactionController extends Controller
             'nama_penerima'=>$request->nama_penerima,
             'alamat_pengiriman'=>$request->alamat_pengiriman,
         ]);
+
+        return redirect('/');
     }
 }
