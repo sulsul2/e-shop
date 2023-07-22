@@ -15,7 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/',function(){
+    return view('katalog-barang');
+});
+Route::get('/detail',function(){
+    return view('detail-barang');
+});
 Route::get('/register', function () {
     return view('auth/register');
 })->name('register');
@@ -30,5 +35,5 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/', [TransactionController::class, 'transactionHistory']);
+    Route::get('/history', [TransactionController::class, 'transactionHistory']);
 });

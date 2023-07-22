@@ -27,8 +27,8 @@
         </div>
         <div class="flex gap-12">
             <div class="flex flex-col items-center bg-stone-600 h-[800px] rounded-2xl py-4">
-                <img src="/images/katalog.svg" class="">
-                <img src="/images/history.svg" class="">
+                <a href="/" class=""><img src="/images/katalog.svg" class="cursor-pointer"></a>
+                <a href="/history" class=""><img src="/images/history.svg" class="cursor-pointer"></a>
             </div>
             <div class="grid grid-cols-6 gap-x-6 gap-y-0">
                 @foreach($transactions as $trans)
