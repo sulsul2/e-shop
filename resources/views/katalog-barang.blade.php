@@ -23,7 +23,17 @@
             <form action="#" method="get">
                 <input type="text" name="search" placeholder="Search" class="rounded-2xl bg-transparent w-96">
             </form>
-            <img src="/images/home.svg" class="invisible">
+            <div>
+                @auth
+                <a href="/logout" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log out</a>
+                @else
+                <a href="/login" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+
+                @if (Route::has('register'))
+                <a href="/register" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                @endif
+                @endauth
+            </div>
         </div>
         <div class="flex gap-12">
             <div class="flex flex-col items-center bg-stone-600 h-[800px] rounded-2xl py-4">
