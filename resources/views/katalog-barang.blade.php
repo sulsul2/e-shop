@@ -30,224 +30,25 @@
                 <a href="/" class=""><img src="/images/katalog.svg" class="cursor-pointer"></a>
                 <a href="/history" class=""><img src="/images/history.svg" class="cursor-pointer"></a>
             </div>
+            @if (count($data) != 0)
             <div class="grid grid-cols-6 gap-x-6 gap-y-0">
+                @foreach ( $data as $katalog )
                 <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
                     <div class="flex justify-between">
                         <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
+                            <p class="font-extrabold">{{ $katalog->name }}</p>
+                            <p>Rp {{ $katalog->price }}</p>
                         </div>
-                        <p class="font-extrabold">xx</p>
+                        <p class="font-extrabold">{{ $katalog->stok }}</p>
                     </div>
                 </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
-                <div class="w-36 h-36 bg-[#9C9C9C] rounded-xl hover:scale-105 cursor-pointer flex flex-col justify-end px-3 py-2">
-                    <div class="flex justify-between">
-                        <div class="flex flex-col">
-                            <p class="font-extrabold">XXX</p>
-                            <p>RpXXX</p>
-                        </div>
-                        <p class="font-extrabold">xx</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
+            @else
+            <div class="flex w-full justify-center items-center">
+                <h1 class="text-xl font-bold text-slate-800 text-center">Data tidak ada</h1>
+            </div>
+            @endif
         </div>
     </div>
 </body>

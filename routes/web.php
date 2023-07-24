@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
@@ -15,10 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',function(){
-    return view('katalog-barang');
-});
-Route::get('/detail',function(){
+Route::get('/', [ProductController::class, 'all']);
+
+Route::get('/detail', function () {
     return view('detail-barang');
 });
 Route::get('/register', function () {
