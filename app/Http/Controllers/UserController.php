@@ -28,12 +28,16 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        $user = User::where('email', $request->email)->first();
-
         $credentials = request(['email', 'password']);
 
         if (!Auth::attempt($credentials)) {
-            return redirect('/register');
+            return redirect('/register')->withErrors('These credentials do not match our records.');
+        }
+
+        $user = User::where('email', $request->email)->first();
+
+        if (!Hash::check($request->password, $user->password, [])) {
+            return redirect('/register')->withErrors('These credentials do not match our records.');
         }
 
         $user->createToken('authToken')->plainTextToken;
