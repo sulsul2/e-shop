@@ -40,4 +40,35 @@ class UserController extends Controller
 
         return redirect('/');
     }
+
+    // Login
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'email|required',
+            'password' => 'required',
+        ]);
+
+        $credentials = request(['email', 'password']);
+
+        if (!Auth::attempt($credentials)) {
+            return redirect('/login')->withErrors('These credentials do not match our records.');
+        }
+
+        $user = User::where('email', $request->email)->first();
+
+        if (!Hash::check($request->password, $user->password, [])) {
+            return redirect('/login')->withErrors('These credentials do not match our records.');
+        }
+
+        $user->createToken('authToken')->plainTextToken;
+        return redirect('/');
+    }
+
+    // logout
+    public function logout(Request $request)
+    {
+        auth()->guard('web')->logout();
+        return redirect('/');
+    }
 }
