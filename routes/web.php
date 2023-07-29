@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductController::class, 'all']);
 Route::get('/detail/{id}', [ProductController::class, 'detail']);
+Route::get('/detail/{id}/buy', [ProductController::class, 'detailBuy']);
 
 Route::get('/register', function () {
     return view('auth/register');

@@ -33,7 +33,7 @@
                         <p class="font-extrabold">{{ $product->stok }}</p>
                     </div>
                 </div>
-                <x-validation-errors />
+                <!-- <x-validation-errors />
                 <form method="POST" action="/buy" class="w-full">
                     @csrf
                     <input type="hidden" name="id" value="{{ $product->id }}">
@@ -43,10 +43,10 @@
                     <input required type="text" name="jumlah_barang" placeholder="Jumlah" value="{{ old('jumlah_barang') }}">
                     <input required type="text" name="nama_penerima" placeholder="Nama Penerima" value="{{ old('nama_penerima') }}">
                     <input required type="text" name="alamat_pengiriman" placeholder="Alamat Pengiriman" value="{{ old('alamat_pengiriman') }}">
-                    <button type=" submit" class="my-4 w-full py-3 rounded-full text-white bg-gradient-to-b from-pink-400 to-purple-400 hover:from-pink-300 hover:to-purple-300 text-lg md:text-xl xl:text-2xl font-semibold">
-                        Click Here to Buy
-                    </button>
-                </form>
+                </form> -->
+                <a href="/detail/{{ $product->id }}/buy" class="my-4 w-full py-3 rounded-full text-white bg-gradient-to-b from-pink-400 to-purple-400 hover:from-pink-300 hover:to-purple-300 text-lg md:text-xl xl:text-2xl font-semibold flex justify-center">
+                    Click Here to Buy
+                </a>
             </div>
             <div class="flex flex-col items-center bg-stone-600 h-[800px] rounded-2xl py-4 invisible">
                 <a href="/" class=""><img src="/images/katalog.svg" class="cursor-pointer"></a>

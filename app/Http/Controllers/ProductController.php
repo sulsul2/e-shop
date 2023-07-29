@@ -15,7 +15,7 @@ class ProductController extends Controller
         $url = "http://localhost:5000/products";
 
         $headers = [
-            'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiQmFuYW5hIiwiaWF0IjoxNjg5NDI1MTA2fQ.dmOI8Py0-BsDDKIDB6YlX1vgZJqIeRY3xJNiIzIxKJU'
+            'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiQmFuYW5hIiwiaWF0IjoxNjkwNjI2NTI1fQ.DHP9abrfMYADKbU7b_fAEOa1FhU2xo5rCgYHgIZCDfY'
         ];
 
         $response = $client->request('GET', $url, [
@@ -41,7 +41,7 @@ class ProductController extends Controller
         $url = "http://localhost:5000/products";
 
         $headers = [
-            'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiQmFuYW5hIiwiaWF0IjoxNjg5NDI1MTA2fQ.dmOI8Py0-BsDDKIDB6YlX1vgZJqIeRY3xJNiIzIxKJU'
+            'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiQmFuYW5hIiwiaWF0IjoxNjkwNjI2NTI1fQ.DHP9abrfMYADKbU7b_fAEOa1FhU2xo5rCgYHgIZCDfY'
         ];
 
         $response = $client->request('GET', $url, [
@@ -56,5 +56,29 @@ class ProductController extends Controller
         });
 
         return view('detail-barang', ['product' => $responseBody->first()]);
+    }
+
+
+    function detailBuy($id)
+    {
+        $client = new Client();
+        $url = "http://localhost:5000/products";
+
+        $headers = [
+            'Authorization' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiQmFuYW5hIiwiaWF0IjoxNjkwNjI2NTI1fQ.DHP9abrfMYADKbU7b_fAEOa1FhU2xo5rCgYHgIZCDfY'
+        ];
+
+        $response = $client->request('GET', $url, [
+            'headers' => $headers,
+            'verify'  => false,
+        ]);
+
+        $responseBody = json_decode($response->getBody());
+
+        $responseBody = collect($responseBody)->filter(function ($item) use ($id) {
+            return false !== stripos($item->id, $id);
+        });
+
+        return view('buy', ['product' => $responseBody->first()]);
     }
 }
